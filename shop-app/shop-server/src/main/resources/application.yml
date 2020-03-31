@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: shop-eureka
+server:
+  port: 8000
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    register-with-eureka: false #是否将自己注册到服务中心 默认是true
+    fetch-registry: false #是否从eureka中获取注册信息，单节点不需要为false 默认为true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
